@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <title>太极</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .box{
+            position: absolute;
+            left:0;
+            top:0;
+            bottom:0;
+            right:0;
+            margin:auto;
+            width:300px;
+            height:300px;
+            border: 1px solid #000000;
+            -webkit-border-radius:50%;
+            -moz-border-radius:50%;
+            border-radius:50%;
+            overflow: hidden;
+            transition:all 2s;
+        }
+        .box-l{
+            width:50%;
+            height:100%;
+            float: left;
+            background: #fff;
+        }
+        .box-r{
+            width:50%;
+            height:100%;
+            float: left;
+            background: #000;
+
+        }
+        .circle-top{
+            width:50%;
+            height:50%;
+            position: absolute;
+            left:25%;
+            top:0;
+            background: #fff;
+            border-radius:50%;
+
+        }
+        .circle-bottom{
+            width:50%;
+            height:50%;
+            position: absolute;
+            left:25%;
+            bottom:0;
+            background: #000;
+            border-radius:50%;
+
+        }
+        .box>div>div>div{
+            position: absolute;
+            left:0;
+            top:0;
+            bottom:0;
+            right:0;
+            margin:auto;
+            width:30px;
+            height:30px;
+            border-radius:50%;
+        }
+        .circle-bottom div{
+            background: #fff;
+        }
+        .circle-top div{
+            background: #000;
+        }
+        .active{
+            -webkit-transform: rotateZ(720deg);
+            -moz-transform: rotateZ(720deg);
+            -ms-transform: rotateZ(720deg);
+            -o-transform: rotateZ(720deg);
+            transform: rotateZ(720deg);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div class="box-l">
+            <div class="circle-top">
+                <div></div>
+            </div>
+        </div>
+        <div class="box-r">
+            <div class="circle-bottom">
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var boxObj=document.getElementsByClassName('box')[0];
+
+        boxObj.addEventListener('touchstart',function(){
+            boxObj.setAttribute('class','box active')
+        })
+        boxObj.addEventListener('touchend',function(){
+            boxObj.setAttribute('class','box')
+        })
+    </script>
+</body>
+</html>
